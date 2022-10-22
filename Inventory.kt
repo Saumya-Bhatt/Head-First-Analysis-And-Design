@@ -1,13 +1,12 @@
-/**
- * Inventory
- *
- * @constructor Create empty Inventory
- */
+import entities.Build
+import entities.Model
+import entities.Type
+
 class Inventory {
 
   private val guitars = mutableListOf<Guitar>()
 
-  private fun addGuitar(serialNumber: String, price: Double, type: String, model: String, build: String) {
+  private fun addGuitar(serialNumber: String, price: Double, type: Type, model: Model, build: Build) {
     val newGuitar = Guitar(serialNumber, price, type, model, build)
     guitars.add(newGuitar)
   }
