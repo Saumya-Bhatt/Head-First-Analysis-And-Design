@@ -1,4 +1,5 @@
 import entities.Build
+import entities.GuitarSpec
 import entities.Model
 import entities.Type
 
@@ -7,7 +8,8 @@ class Inventory {
   private val guitars = mutableListOf<Guitar>()
 
   private fun addGuitar(serialNumber: String, price: Double, type: Type, model: Model, build: Build) {
-    val newGuitar = Guitar(serialNumber, price, type, model, build)
+    val guitarSpec = GuitarSpec(build, type, model)
+    val newGuitar = Guitar(serialNumber, price, guitarSpec)
     guitars.add(newGuitar)
   }
 
@@ -18,13 +20,11 @@ class Inventory {
     return null
   }
 
-  private fun search(guitar: Guitar): MutableList<Guitar> {
+  private fun search(guitarSpec: GuitarSpec): MutableList<Guitar> {
     val matchingResults = mutableListOf<Guitar>()
 
     for (g in guitars) {
-      if (g.getBuild() == guitar.getBuild() &&
-          g.getType() == guitar.getType() &&
-          g.getModel() == guitar.getModel()) matchingResults.add(g)
+      if (g.getGuitarSpec() == guitarSpec) matchingResults.add(g)
     }
     return matchingResults
   }
