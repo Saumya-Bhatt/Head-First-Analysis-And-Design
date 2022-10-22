@@ -18,13 +18,15 @@ class Inventory {
     return null
   }
 
-  private fun search(guitar: Guitar): Guitar? {
+  private fun search(guitar: Guitar): MutableList<Guitar> {
+    val matchingResults = mutableListOf<Guitar>()
+
     for (g in guitars) {
       if (g.getBuild() == guitar.getBuild() &&
           g.getType() == guitar.getType() &&
-          g.getModel() == guitar.getModel()) return g
+          g.getModel() == guitar.getModel()) matchingResults.add(g)
     }
-    return null
+    return matchingResults
   }
 
 }
