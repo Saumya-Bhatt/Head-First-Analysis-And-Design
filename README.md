@@ -4,26 +4,38 @@
 
 Doug makes remote controlled dog doors. Using the remote, the customer can open/close the dog doors.
 
-## Problems with the initial solution
+## Requirements Updated
 
-1. Customers only press the door once for the dog to come and go.
-2. This led to the door being left open even when the dog is inside.
-3. This led to various other animals like rabbits entering the house as well.
+1. We now have to recognize when the dog barks.
+2. Depending on that, we have to open the door.
+3. This will be the primary flow from now on.
 
-## Things to Note
+## Usecase
 
-1. Although there's nothing really wrong with our implementation, we failed to exactly capture the customer's requirements.
-2. We need to think about alternate paths that the customer might take to test all edge cases.
+Note we can go directly from 6-7. The substeps between them is not an alternate flow. It is an edge case.
 
->> Usecse - describes __What__ the system needs to accomplish to achieve a __specific goal__ in a __specific scenario__.
+| Happy / Main Flow                                    | Alternate Flow                             |
+|------------------------------------------------------|--------------------------------------------|
+| 1. Dog barks                                         |                                            |
+| 2. Bark recognizer hears a bark                      | 2.1 User hears a bark                      |
+| 3. Bark recognizer sends request to open the door    | 3.1 User presses button to open the door   |
+| 4. Dog door open                                     |                                            |
+| 5. Dog goes outside                                  |                                            |
+| 6. Dog does his business                             |                                            |
+| _6.1 Door shuts automatically_                       |                                            |
+| _6.2 Dog barks to be let in_                         |                                            |
+| _6.3 Bark recognizer hears the bark_                 | 6.3.1 User hears the bark                  |
+| _6.4 Bark recognizer sends request to open the door_ | 6.4.1 User presses button to open the door |
+| _6.5 Dog door opens again_                           | |
+| 7. Dog goes back inside                              |                                            |
+| 8. Dog door shuts close                              |                                            |
 
-## Usecases
+## Testing
 
-1. __Clear Value__ : what it does to add value to the system
-2. __Start and Stop__ : something to indicate when the process starts and stops
-3. __External Initiator__ : something outside the system which initiates the usecase
-
-## Requirements after noting down the usecase
-
-1. Customer want just one button to open and close door - toggle (already met requirement)
-2. The door should close automatically when open after some time
+```kotlin
+fun main() {
+  val door = DogDoor()
+  val remote = Remote(door)
+  val barkRecognizer = BarkRecognizer(door)
+}
+```
