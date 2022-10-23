@@ -1,20 +1,31 @@
-# Head-First-Analysis-And-Design
+# 2.1 Doug's Dog Doors
 
-Notes from the Head First Analytics and Object Oriented Design Principle book.
+## Introduction
 
-## How to use
+Doug makes remote controlled dog doors. Using the remote, the customer can open/close the dog doors.
 
-The branches are auto numbered according to the topics in the indexes.
+## Functional Requirements
 
-## Index
+1. The remote can be used to open and close the dog door.
+2. The remote should return the current state of the dog door.
 
-### 1. Introduction to OOA&D - Rick's Guitar Shop
+## Entities and Usecases
 
-* First get requirements from customer and make a working model
-* Use OO concepts to make it re-useable and flexible
-* Delegate functionalities to make it maintainable
-
-1. [Defining the problem](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.1-ricks-guitar-shop) 
-2. [Making it type safe using enums](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.2-ricks-guitar-shop)
-3. [Updating functional requirements](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.3-ricks-guitar-shop)
-4. [Encapsulating parts that change](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.3-ricks-guitar-shop)
+1. DogDoor
+```kotlin
+class DogDoor(
+    val open:Boolean
+) {
+  fun open()
+  fun close()
+  fun isOpen()
+}
+```
+2. Remote
+```kotlin
+class Remote(
+    val door:DogDoor
+) {
+  fun pressButton() // to toggle door
+}
+```
