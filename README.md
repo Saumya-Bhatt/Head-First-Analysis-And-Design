@@ -18,3 +18,13 @@ The branches are auto numbered according to the topics in the indexes.
 2. [Making it type safe using enums](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.2-ricks-guitar-shop)
 3. [Updating functional requirements](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.3-ricks-guitar-shop)
 4. [Encapsulating parts that change](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.3-ricks-guitar-shop)
+
+### 2. Getting customer requirements - Doug's Dog Doors
+
+* Firs get the list of requirements from the customer
+* From that prepare the usecases. Each usecase must achieve a singular goal and should have 3 properties.
+* Once usecases are defined, work on refining the requirements.
+* Keep in mind the happy and the alternate paths, both of which should lead to the same end goal
+
+1. [Defining the problem](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.1-dougs-dog-doors)
+2. [Refining solution according after listening to requirements](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.1-dougs-dog-doors)
