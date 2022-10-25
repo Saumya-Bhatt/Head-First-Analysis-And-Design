@@ -1,14 +1,20 @@
-# 2.1 Doug's Dog Doors
+# 2.4.1 Doug's Dog Doors
 
 ## Introduction
 
 Doug makes remote controlled dog doors. Using the remote, the customer can open/close the dog doors.
 
-## Problem with the previous solution
+## New usecase to be added
 
-The door when opened with the bark recognizer will continue to remain open and not close.
+1. We want the door to recognize the bark of only the dog which are registered with us.
+2. So in the main usecase, where we use the `BarkRecognizer` we would also need to store the bark of that dog.
+3. This would involve a new usecase as the end goal of this one would be to store the bark.
 
-## Possible solutions
+## New Usecase would:
 
-1. Repeat the code that we used for the remote (add timer) to the bark recognizer.
-2. But we want to prevent code duplication. Closing of door should be a property of the door and not of anything else.
+1. Store the bark into the `DogDoor`.
+2. Use it as a comparison when the dog barks.
+
+## Current Implementation:
+
+Store the bark as a string
