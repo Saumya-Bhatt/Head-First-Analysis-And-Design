@@ -1,4 +1,4 @@
-# 2.1 Doug's Dog Doors
+# 2.4.2 Doug's Dog Doors
 
 ## Introduction
 
@@ -6,9 +6,25 @@ Doug makes remote controlled dog doors. Using the remote, the customer can open/
 
 ## Problem with the previous solution
 
-The door when opened with the bark recognizer will continue to remain open and not close.
+1. Using a string to represent Bark makes our system tightly coupled.
+2. If when we want to give more details to the bark, we would have to make changes to the `BarkRecognizer` and
+   the `DogDoor`.
 
-## Possible solutions
+## Using object and delegation
 
-1. Repeat the code that we used for the remote (add timer) to the bark recognizer.
-2. But we want to prevent code duplication. Closing of door should be a property of the door and not of anything else.
+Would be better if we came up with an object representing the Bark
+
+```kotlin
+class Bark(
+    private val bark: String
+) {
+  fun getSound() = bark
+
+  fun equals(otherBark: Bark): Boolean {
+    if (otherBark.javaClass == this.javaClass) {
+      return otherBark.bark.lowercase() == this.bark.lowercase()
+    }
+    return false
+  }
+}
+```
