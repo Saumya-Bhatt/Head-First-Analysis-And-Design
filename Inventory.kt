@@ -1,32 +1,46 @@
 import entities.Build
-import entities.GuitarSpec
 import entities.Model
 import entities.Type
+import entities.guitar.Guitar
+import entities.guitar.GuitarSpec
+import entities.mandolin.Mandolin
+import entities.mandolin.MandolinSpec
+import java.lang.Exception
 
-class Inventory {
+class Inventory(
+  private val instruments: MutableList<Instrument> = mutableListOf<Instrument>()
+) {
 
-  private val guitars = mutableListOf<Guitar>()
+  fun addInstrument(serialNumber: String, price: Double, spec: InstrumentSpec) = when (spec::class) {
+    Guitar::class -> Guitar(serialNumber, price, spec as GuitarSpec)
+    Mandolin::class -> Mandolin(serialNumber, price, spec as MandolinSpec)
+    else -> throw Exception("No such specifications exist!")
+  }.let { this.instruments.add(it) }
 
-  private fun addGuitar(serialNumber: String, price: Double, type: Type, model: Model, build: Build) {
-    val guitarSpec = GuitarSpec(build, type, model)
-    val newGuitar = Guitar(serialNumber, price, guitarSpec)
-    guitars.add(newGuitar)
-  }
-
-  private fun getGuitar(serialNumber: String): Guitar? {
-    for (guitar in guitars) {
-      if (guitar.getSerialNumber() == serialNumber) return guitar
+  fun get(serialNumber: String): Instrument? {
+    for (inst in this.instruments) {
+      if (inst.getSerialNumber() == serialNumber) return inst
     }
     return null
   }
 
-  private fun search(guitarSpec: GuitarSpec): MutableList<Guitar> {
-    val matchingResults = mutableListOf<Guitar>()
+  fun search(spec: GuitarSpec): MutableList<Guitar> {
+    val matchingGuitars = mutableListOf<Guitar>()
 
-    for (g in guitars) {
-      if (g.getGuitarSpec() == guitarSpec) matchingResults.add(g)
+    for (inst in this.instruments) {
+      val tryThis = inst as Guitar
+      if (spec.match(tryThis.getSpec())) matchingGuitars.add(tryThis)
     }
-    return matchingResults
+    return matchingGuitars
   }
 
+  fun search(spec: MandolinSpec): MutableList<Mandolin> {
+    val matchingMandolin = mutableListOf<Mandolin>()
+
+    for (inst in this.instruments) {
+      val tryThis = inst as Mandolin
+      if (spec.match(tryThis.getSpec())) matchingMandolin.add(tryThis)
+    }
+    return matchingMandolin
+  }
 }
