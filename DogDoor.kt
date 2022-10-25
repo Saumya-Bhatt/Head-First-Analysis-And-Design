@@ -2,8 +2,17 @@ import java.util.*
 import kotlin.concurrent.timerTask
 
 class DogDoor(
-    private var open: Boolean = false
+    private var open: Boolean = false,
+
+    private var allowedBarks: MutableList<Bark> = mutableListOf()
 ) {
+
+  fun addAllowedBark(bark: Bark) {
+    this.allowedBarks.add(bark)
+  }
+
+  fun getAllowedBarks() = this.allowedBarks
+
   fun open() {
     this.open = true
 
