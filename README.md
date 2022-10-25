@@ -19,7 +19,7 @@ The branches are auto numbered according to the topics in the indexes.
 1. [Defining the problem](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.1-ricks-guitar-shop) 
 2. [Making it type safe using enums](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.2-ricks-guitar-shop)
 3. [Updating functional requirements](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.3-ricks-guitar-shop)
-4. [Encapsulating parts that change](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.3-ricks-guitar-shop)
+4. [Encapsulating parts that change](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/1.4-ricks-guitar-shop)
 
 ---
 
