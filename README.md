@@ -1,4 +1,4 @@
-# 2.1 Doug's Dog Doors
+# 2.2 Doug's Dog Doors
 
 ## Introduction
 
