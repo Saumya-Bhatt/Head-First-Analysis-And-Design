@@ -32,7 +32,7 @@ The branches are auto numbered according to the topics in the indexes.
 * Single usecase can have multiple scenarios as long as they have same end point.
 
 1. [Defining the problem](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.1-dougs-dog-doors)
-2. [Refining solution according after listening to requirements](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.1-dougs-dog-doors)
+2. [Refining solution according after listening to requirements](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.2-dougs-dog-doors)
 3. [Requirements updated. Update the usecase](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.3-dougs-dog-door)
 4. [Encapsulating parts that might change](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.4-dougs-dog-doors)
 
