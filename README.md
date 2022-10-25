@@ -1,4 +1,4 @@
-# Rick's Guitar Studio Shop
+# 1.1 Rick's Guitar Studio Shop
 
 ## Introduction
 
