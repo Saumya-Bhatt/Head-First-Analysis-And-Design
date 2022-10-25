@@ -1,16 +1,16 @@
 # Head-First-Analysis-And-Design
 
-Notes from the Head First Analytics and Object Oriented Design Principle book.
+Notes from the book - Head First Object-Oriented Analysis and Design
 
 ## How to use
 
-The branches are auto numbered according to the topics in the indexes.
+The branches are numbered according to the manner they should be read. If that doesn't help, the index given below points to various topics mentioned.
 
 ## Index
 
----
+### 1. Introduction to OOA&D
 
-### 1. Introduction to OOA&D - Rick's Guitar Shop
+__Example Design__ : `Rick's Guitar Shop`
 
 * First get requirements from customer and make a working model
 * Use OO concepts to make it re-useable and flexible
@@ -23,7 +23,9 @@ The branches are auto numbered according to the topics in the indexes.
 
 ---
 
-### 2. Getting customer requirements - Doug's Dog Doors
+### 2. Requirements, Usecases and Textual Analysis
+
+__Example Design__ : `Doug's Dog Doors`
 
 * First get the list of requirements from the customer
 * From that prepare the usecases. Each usecase must achieve a singular goal and should have 3 properties.
@@ -43,5 +45,17 @@ The branches are auto numbered according to the topics in the indexes.
 2.4.1 [Identifying a new usecase. Solution 1 using strings](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.4.1-dougs-dog-doors) <br>
 2.4.2 [Identifying a new usecase. Solution 2 using objects](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.4.2-dougs-dog-doors) <br>
 2.4.3 [Performing Textual Analysis](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/2.4.2-dougs-dog-doors)
+
+---
+
+### 3. Flexible design using OO principles
+
+__Example Design__ : `Rick's Stringed instruments`
+
+* Encapsulate what varies
+* Code to interface, not implementation
+* Each class in application should have only 1 reason to change.
+
+3.1 [Using encapsulation](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.1-ricks-stringed-instruments)
 
 ---
