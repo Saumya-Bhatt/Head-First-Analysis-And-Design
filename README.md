@@ -56,7 +56,9 @@ __Example Design__ : `Rick's Stringed instruments`
 
 * Encapsulate what varies
 * Code to interface, not implementation
-* Each class in application should have only 1 reason to change.
+* Each class in application should have only 1 reason to change and should do only 1 thing really well - **cohesion**
+
+> Aim is to have highly cohesive and loosely coupled design
 
 3.1 [Using encapsulation](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.1-ricks-stringed-instruments) <br>
 3.2 [Analyzing where to apply OO design](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.2-ricks-stringed-instruments) <br>
