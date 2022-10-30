@@ -1,47 +1,37 @@
-# 3.1 Rick's Stringed Instruments
+# 3.2 Rick's Stringed Instruments
 
 ## Introduction
 
 Rick's guitar shop now also wants to sell different types of musical instruments (Mandolin for example).
 
-![overview](3.1-ricks-instruments-shop-uml.png)
+## Problems with the previous solution
 
-## Steps to be taken:
+1. Need to create a search method for every different type of instrument when added.
+2. `Guitar` and `Mandolin` classes are only empty constructors providing nothing. Plus have to create such class for
+   every new instrument we add.
+3. Have to modify `addInstrument()` method for any new instrument we add.
 
-1. Abstract out the Instruments since now there can be multiple instruments (Guitar and Mandolin).
-2. Abstract out the InstrumentsSpecs since now there can be multiple specifications (each for Guitar and Mandolin).
-3. Few properties (like build, type and model) are shared across both instruments so the `match` can be made a part of the `InstrumentSpec`.
-4. `match` can then be overridden by the classes that implement it according to their specifications.
+### Things to note
 
-```kotlin
-abstract class Instrument(
-  private val serialNumber: String,
-  private val price: Double,
-  private val instrumentSpec: InstrumentSpec
-) {
-  fun getSerialNumber() = serialNumber
-  fun getPrice() = price
-  fun getSpec() = instrumentSpec
-}
-```
+`search()` method takes in `GuitarSpec`, `MandolinSpec` and not `InstrumentSpec`. We __should be coding to interface and
+not implementation__
 
-```kotlin
-abstract class InstrumentSpec(
-  private val build: Build,
-  private val type: Type,
-  private val model: Model
-) {
-  fun getType(): Type = type
-  fun getModel(): Model = model
-  fun getBuild(): Build = build
+> `Instrument` was earlier made abstract because each instrument type was represented by its own subclass (They shared a common property).
 
-  open fun match(otherSpec: InstrumentSpec): Boolean {
-    return (otherSpec.build != this.build || otherSpec.type != this.type || otherSpec.model != this.model)
-  }
-}
-```
+> But generally, subclasses are created because their __behaviour__ is different from their super class! Guitars and Mandolins have different properties but not behaviours!
 
-## Why did this helped? - Encapsulation
+---
 
-1. Just need to create `Guitar` and `Mandolin` classes implement `Instrument`. Similarly, for their specs. This greatly helped reduce code duplication.
-2. Any future instruments need to only implement these 2 abstract classes and do minimal changes to the code.
+## Solution 1
+
+Make `InstrumentSpec` not Abstract. That way, we can pass it as an argument in the `search()` method.
+
+### Advantages
+
+1. `search()` is now being coded to interface and not implementation.
+2. Can return different instruments (Guitars and Mandolins) if the specs match.
+
+### Disadvantages
+
+1. `addInstrument()` is still being coded to implementation. So would have to update it whenever we add a new
+   instrument.
