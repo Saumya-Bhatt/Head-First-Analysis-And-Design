@@ -59,6 +59,7 @@ __Example Design__ : `Rick's Stringed instruments`
 * Each class in application should have only 1 reason to change.
 
 3.1 [Using encapsulation](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.1-ricks-stringed-instruments) <br>
-3.2 [Analyzing where to apply OO design](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.2-ricks-stringed-instruments)
+3.2 [Analyzing where to apply OO design](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.2-ricks-stringed-instruments) <br>
+3.3 [Removing unnecessary subclasses](https://github.com/Saumya-Bhatt/Head-First-Analysis-And-Design/tree/3.3-ricks-stringed-instruments)
 
 ---
